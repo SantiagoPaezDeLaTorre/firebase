@@ -48,7 +48,8 @@ const ItemDetailContainer = () => {
       docs.push({ ...doc.data(), id: doc.id });
       console.log("list", docs);
       });
-      setItem(docs);
+      setItem(...docs);
+      
       console.log("itemDetails", item);
     }
     getItem();

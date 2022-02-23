@@ -10,8 +10,9 @@ export const CartProvider = ({ children }) => {
     let isEmpty = "carritoVacio";
 
     const addItemsToCart = (item, cantidad) => {
-        let itemDetails = item[0];
+        let itemDetails = item;
         console.log("itemDetails", itemDetails);
+        console.log("item", item);
         setCart((prevState) => {
             //Verifico que un item no esté antes de agregar el objeto entero
             let alreadyOnCart = prevState.findIndex(obj => obj.id == itemDetails.id);
@@ -23,7 +24,6 @@ export const CartProvider = ({ children }) => {
             }
             return prevState;
         });
-
     }
 
     useEffect(() => {
@@ -33,6 +33,7 @@ export const CartProvider = ({ children }) => {
         //Calculo el importe total de compra
         let totalPrice = 0;
         for (let item of cart){
+            console.log("item", item);
             let precioT = item.precio*item.cantidad;
             totalPrice += precioT;
         }

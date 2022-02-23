@@ -9,7 +9,7 @@ const CartContainer = () => {
     //useEffect para ver mi cart cada vez que es modificado
     useEffect(
         () => {
-            console.log(cart);
+            console.log(...cart);
         }
         , [cart])
 

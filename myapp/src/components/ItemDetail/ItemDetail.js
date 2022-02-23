@@ -6,7 +6,8 @@ import {Link} from 'react-router-dom';
 
 const ItemDetail = ({ item, onAddToCart, counterRender, setCounterRender  }) => {
   let itemDetails = {};
-  itemDetails = item[0];
+  itemDetails = item;
+  console.log("item", item);
   return (
     <div className="itemDetail">
       <div className="itemDetailLeft">
@@ -15,7 +16,7 @@ const ItemDetail = ({ item, onAddToCart, counterRender, setCounterRender  }) => 
       <div className="itemDetailRight">
         <h1>{itemDetails.nombre}</h1>
         <h2>$ {itemDetails.precio}</h2>
-        { counterRender ? <ItemCounter item={item} stock={item[0].stock} onAddToCart={onAddToCart} counterRender={counterRender} setCounterRender={setCounterRender} /> 
+        { counterRender ? <ItemCounter item={item} stock={item.stock} onAddToCart={onAddToCart} counterRender={counterRender} setCounterRender={setCounterRender} /> 
           : <Link to="/cart" ><button > Finalizar compra </button></Link>}
       </div>
     </div>
